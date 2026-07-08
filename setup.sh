@@ -1,6 +1,13 @@
-8#!/bin/bash
+#!/bin/bash
+clear
+echo "=================================="
+echo "      SANGGAR VPN INSTALLER"
+echo "=================================="
 
-echo "Selamat datang di SANGGAR PREMIUM"
-apt update
-apt install -y curl wget git unzip nginx
-echo "Instalasi selesai."
+bash ssh/install.sh
+bash xray/install.sh
+bash websocket/install.sh
+bash menu/install.sh
+
+echo
+echo "Install selesai."
