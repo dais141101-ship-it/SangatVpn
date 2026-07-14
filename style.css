@@ -92,3 +92,69 @@ button{
  font-weight:bold;
  letter-spacing:1px;
 }
+.section{
+padding:60px 20px;
+text-align:center;
+}
+
+
+.cards{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+
+.card{
+
+background:rgba(255,255,255,.05);
+
+border:1px solid cyan;
+
+padding:25px;
+
+width:280px;
+
+border-radius:20px;
+
+box-shadow:
+0 0 20px cyan;
+
+backdrop-filter:blur(10px);
+
+}
+
+
+.card:hover{
+
+transform:translateY(-10px);
+
+box-shadow:
+0 0 40px magenta;
+
+}
+
+
+.card h2{
+
+color:#00ffff;
+
+}
+
+
+.card button{
+
+margin-top:15px;
+
+padding:10px 30px;
+
+border:0;
+
+border-radius:20px;
+
+background:#00ffff;
+
+font-weight:bold;
+
+}
