@@ -1,345 +1,161 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-<title>NEXUS VPN | Premium Network</title>
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEXUS VPN 3D Neon</title>
 
 <style>
-
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial, sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
 }
 
 body{
-
-background:#02030a;
-color:white;
-overflow-x:hidden;
-
+    height:100vh;
+    overflow:hidden;
+    background:#050014;
+    color:white;
 }
 
-
-/* BACKGROUND */
-
-body:before{
-
-content:"";
-
-position:fixed;
-
-width:600px;
-height:600px;
-
-background:
-radial-gradient(circle,
-cyan,
-transparent 60%);
-
-filter:blur(100px);
-
-opacity:.25;
-
-top:20%;
-left:50%;
-
-transform:translateX(-50%);
-
-z-index:-1;
-
+/* background neon */
+body::before{
+    content:"";
+    position:absolute;
+    width:500px;
+    height:500px;
+    background:#00ffff;
+    filter:blur(150px);
+    opacity:.5;
+    top:-100px;
+    left:-100px;
 }
 
-
-
-/* NAV */
-
-nav{
-
-display:flex;
-justify-content:center;
-gap:25px;
-
-padding:20px;
-
-background:#050510aa;
-
-backdrop-filter:blur(10px);
-
-border-bottom:1px solid cyan;
-
-position:sticky;
-top:0;
-
+body::after{
+    content:"";
+    position:absolute;
+    width:500px;
+    height:500px;
+    background:#ff00ff;
+    filter:blur(150px);
+    opacity:.5;
+    bottom:-100px;
+    right:-100px;
 }
 
-
-nav a{
-
-color:#00ffff;
-text-decoration:none;
-font-weight:bold;
-
-}
-
-
-
-/* HERO */
-
-html,body{
-    margin:0;
-    padding:0;
-}
 
 .hero{
-    min-height:100vh;
+    height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
     text-align:center;
+    position:relative;
 }
-
-
-
-.core{
-
-width:180px;
-height:180px;
-
-margin:auto;
-
-border-radius:50%;
-
-
-background:
-radial-gradient(circle,
-#fff,
-cyan 20%,
-#005577 50%,
-transparent 70%);
-
-
-box-shadow:
-
-0 0 30px cyan,
-0 0 80px cyan;
-
-
-animation:
-
-rotate 5s linear infinite;
-
-}
-
-
-
-@keyframes rotate{
-
-0%{
-transform:rotate(0deg);
-}
-
-100%{
-transform:rotate(360deg);
-}
-
-}
-
-
-
-h1{
-
-font-size:55px;
-
-color:#00ffff;
-
-text-shadow:
-
-0 0 10px cyan,
-0 0 40px cyan;
-
-margin:30px 0;
-
-}
-
-
-
-.hero p{
-
-font-size:20px;
-
-color:#ccc;
-
-}
-
-
-
-.btn{
-
-display:inline-block;
-
-margin-top:30px;
-
-padding:15px 45px;
-
-border-radius:40px;
-
-background:#00ffff;
-
-color:black;
-
-font-weight:bold;
-
-text-decoration:none;
-
-box-shadow:
-
-0 0 30px cyan;
-
-}
-
-
-
-
-/* SECTION */
-
-
-section{
-
-padding:70px 20px;
-
-text-align:center;
-
-}
-
-
-
-.title{
-
-font-size:35px;
-
-color:#00ffff;
-
-}
-
-
-
-/* CARD */
-
-
-.cards{
-
-display:flex;
-
-justify-content:center;
-
-flex-wrap:wrap;
-
-gap:25px;
-
-margin-top:40px;
-
-}
-
 
 
 .card{
+    width:330px;
+    padding:40px 25px;
+    border-radius:25px;
 
-width:280px;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(15px);
 
-padding:30px;
+    border:1px solid rgba(0,255,255,.5);
 
+    box-shadow:
+    0 0 20px #00ffff,
+    inset 0 0 30px rgba(255,0,255,.3);
 
-background:
-
-rgba(255,255,255,.06);
-
-
-border:
-
-1px solid cyan;
-
-
-border-radius:20px;
-
-
-backdrop-filter:blur(15px);
-
-
-box-shadow:
-
-0 0 20px #00ffff55;
-
-
-transition:.4s;
-
+    transform:perspective(800px)
+    rotateX(8deg);
 }
 
 
+.logo{
+    font-size:45px;
+    font-weight:bold;
 
-.card:hover{
+    color:#00ffff;
 
-transform:
+    text-shadow:
+    0 0 10px #00ffff,
+    0 0 30px #ff00ff;
 
-translateY(-15px)
-rotateX(8deg);
-
-
-box-shadow:
-
-0 0 40px magenta;
-
+    margin-bottom:20px;
 }
 
 
-
-
-.card h2{
-
-color:#00ffff;
-
-margin-bottom:15px;
-
+.text{
+    color:#ddd;
+    margin-bottom:30px;
 }
-
 
 
 button{
 
-margin-top:20px;
+    padding:15px 45px;
+    border:none;
+    border-radius:50px;
 
-padding:12px 30px;
+    background:#00ffff;
+    color:#000;
 
-border:0;
+    font-size:18px;
+    font-weight:bold;
 
-border-radius:30px;
+    cursor:pointer;
 
-background:#ff00ff;
+    box-shadow:
+    0 0 20px #00ffff;
 
-color:white;
-
-font-weight:bold;
-
+    transition:.3s;
 }
 
 
+button:hover{
 
-/* FOOTER */
+    transform:scale(1.1);
 
+    background:#ff00ff;
 
-footer{
-
-padding:20px;
-
-text-align:center;
-
-color:#777;
-
+    box-shadow:
+    0 0 40px #ff00ff;
 }
 
+
+.circle{
+
+    width:120px;
+    height:120px;
+
+    margin:0 auto 20px;
+
+    border-radius:50%;
+
+    border:5px solid #00ffff;
+
+    box-shadow:
+    0 0 30px #00ffff,
+    inset 0 0 30px #ff00ff;
+
+    animation:spin 5s linear infinite;
+}
+
+
+@keyframes spin{
+
+from{
+transform:rotateY(0deg);
+}
+
+to{
+transform:rotateY(360deg);
+}
+
+}
 
 </style>
 
@@ -349,200 +165,30 @@ color:#777;
 <body>
 
 
-<nav>
-
-<a href="#">HOME</a>
-
-<a href="#server">SERVER</a>
-
-<a href="#harga">HARGA</a>
-
-<a href="#kontak">KONTAK</a>
-
-</nav>
-
-
-
-<div class="hero">
-
-
-<div>
-
-
-<div class="core"></div>
-
-
-<h1>
-⚡ NEXUS VPN
-</h1>
-
-
-<p>
-GLOBAL PRIVATE NETWORK
-<br>
-VLESS • TROJAN • XRAY
-</p>
-
-
-<a class="btn" href="https://wa.me/628000000000">
-BELI CONFIG
-</a>
-
-
-</div>
-
-
-</div>
-
-
-
-
-<section id="server">
-
-
-<div class="title">
-🌐 NEXUS SERVER
-</div>
-
-
-
-<div class="cards">
-
+<section class="hero">
 
 <div class="card">
 
-<h2>🇸🇬 Singapore</h2>
+<div class="circle"></div>
 
-<p>🟢 ONLINE</p>
+<div class="logo">
+NEXUS VPN
+</div>
 
-<p>Ping 20ms</p>
-
-<p>10Gbps Network</p>
-
-<button>CONNECT</button>
-
+<div class="text">
+FAST • SECURE • PREMIUM<br>
+3D NEON NETWORK
 </div>
 
 
-
-<div class="card">
-
-<h2>🇮🇩 Indonesia</h2>
-
-<p>🟢 ONLINE</p>
-
-<p>Ping 15ms</p>
-
-<p>10Gbps Network</p>
-
-<button>CONNECT</button>
-
-</div>
-
-
-
-<div class="card">
-
-<h2>🇯🇵 Japan</h2>
-
-<p>🟢 ONLINE</p>
-
-<p>Ping 40ms</p>
-
-<p>5Gbps Network</p>
-
-<button>CONNECT</button>
-
-</div>
+<button>
+CONNECT
+</button>
 
 
 </div>
-
 
 </section>
-
-
-
-
-<section id="harga">
-
-
-<div class="title">
-💎 PREMIUM PLAN
-</div>
-
-
-<div class="cards">
-
-
-<div class="card">
-
-<h2>30 DAYS</h2>
-
-<p>Unlimited VPN</p>
-
-<p>Multi Device</p>
-
-<button>BELI</button>
-
-</div>
-
-
-
-<div class="card">
-
-<h2>90 DAYS</h2>
-
-<p>Priority Server</p>
-
-<p>High Speed</p>
-
-<button>BELI</button>
-
-</div>
-
-
-
-<div class="card">
-
-<h2>1 YEAR</h2>
-
-<p>Ultimate Access</p>
-
-<p>VIP Node</p>
-
-<button>BELI</button>
-
-</div>
-
-
-</div>
-
-
-</section>
-
-
-
-
-<section id="kontak">
-
-<div class="title">
-CONTACT
-</div>
-
-<p>
-Telegram • WhatsApp • Support 24/7
-</p>
-
-</section>
-
-
-
-<footer>
-
-© 2026 NEXUS VPN
-
-</footer>
 
 
 </body>
