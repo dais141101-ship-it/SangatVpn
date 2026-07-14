@@ -2,7 +2,7 @@
 <html>
 <head>
 
-<title>NEXUS VPN</title>
+<title>NEXUS VPN | Premium Network</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -12,26 +12,67 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial;
+font-family:Arial, sans-serif;
 }
-
 
 body{
 
-background:#02020a;
+background:#02030a;
 color:white;
+overflow-x:hidden;
 
 }
 
 
-/* MENU */
+/* BACKGROUND */
+
+body:before{
+
+content:"";
+
+position:fixed;
+
+width:600px;
+height:600px;
+
+background:
+radial-gradient(circle,
+cyan,
+transparent 60%);
+
+filter:blur(100px);
+
+opacity:.25;
+
+top:20%;
+left:50%;
+
+transform:translateX(-50%);
+
+z-index:-1;
+
+}
+
+
+
+/* NAV */
 
 nav{
 
+display:flex;
+justify-content:center;
+gap:25px;
+
 padding:20px;
-text-align:center;
-background:#050510;
+
+background:#050510aa;
+
+backdrop-filter:blur(10px);
+
 border-bottom:1px solid cyan;
+
+position:sticky;
+top:0;
 
 }
 
@@ -40,10 +81,10 @@ nav a{
 
 color:#00ffff;
 text-decoration:none;
-margin:15px;
 font-weight:bold;
 
 }
+
 
 
 /* HERO */
@@ -53,33 +94,80 @@ font-weight:bold;
 height:90vh;
 
 display:flex;
-align-items:center;
 justify-content:center;
+align-items:center;
 
 text-align:center;
 
+}
+
+
+
+.core{
+
+width:180px;
+height:180px;
+
+margin:auto;
+
+border-radius:50%;
+
+
 background:
-radial-gradient(circle,#07304d,#02020a);
+radial-gradient(circle,
+#fff,
+cyan 20%,
+#005577 50%,
+transparent 70%);
+
+
+box-shadow:
+
+0 0 30px cyan,
+0 0 80px cyan;
+
+
+animation:
+
+rotate 5s linear infinite;
 
 }
+
+
+
+@keyframes rotate{
+
+0%{
+transform:rotate(0deg);
+}
+
+100%{
+transform:rotate(360deg);
+}
+
+}
+
 
 
 h1{
 
-font-size:60px;
+font-size:55px;
 
 color:#00ffff;
 
 text-shadow:
+
 0 0 10px cyan,
-0 0 30px cyan;
+0 0 40px cyan;
+
+margin:30px 0;
 
 }
 
 
-p{
 
-margin:20px;
+.hero p{
+
 font-size:20px;
 
 color:#ccc;
@@ -87,27 +175,169 @@ color:#ccc;
 }
 
 
+
 .btn{
 
 display:inline-block;
 
-padding:15px 40px;
+margin-top:30px;
+
+padding:15px 45px;
+
+border-radius:40px;
 
 background:#00ffff;
 
 color:black;
-
-border-radius:30px;
 
 font-weight:bold;
 
 text-decoration:none;
 
 box-shadow:
-0 0 20px cyan;
+
+0 0 30px cyan;
 
 }
 
+
+
+
+/* SECTION */
+
+
+section{
+
+padding:70px 20px;
+
+text-align:center;
+
+}
+
+
+
+.title{
+
+font-size:35px;
+
+color:#00ffff;
+
+}
+
+
+
+/* CARD */
+
+
+.cards{
+
+display:flex;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+gap:25px;
+
+margin-top:40px;
+
+}
+
+
+
+.card{
+
+width:280px;
+
+padding:30px;
+
+
+background:
+
+rgba(255,255,255,.06);
+
+
+border:
+
+1px solid cyan;
+
+
+border-radius:20px;
+
+
+backdrop-filter:blur(15px);
+
+
+box-shadow:
+
+0 0 20px #00ffff55;
+
+
+transition:.4s;
+
+}
+
+
+
+.card:hover{
+
+transform:
+
+translateY(-15px)
+rotateX(8deg);
+
+
+box-shadow:
+
+0 0 40px magenta;
+
+}
+
+
+
+
+.card h2{
+
+color:#00ffff;
+
+margin-bottom:15px;
+
+}
+
+
+
+button{
+
+margin-top:20px;
+
+padding:12px 30px;
+
+border:0;
+
+border-radius:30px;
+
+background:#ff00ff;
+
+color:white;
+
+font-weight:bold;
+
+}
+
+
+
+/* FOOTER */
+
+
+footer{
+
+padding:20px;
+
+text-align:center;
+
+color:#777;
+
+}
 
 
 </style>
@@ -132,10 +362,13 @@ box-shadow:
 
 
 
-<section class="hero">
+<div class="hero">
 
 
 <div>
+
+
+<div class="core"></div>
 
 
 <h1>
@@ -144,15 +377,82 @@ box-shadow:
 
 
 <p>
-PREMIUM VPN CONFIG
+GLOBAL PRIVATE NETWORK
 <br>
 VLESS • TROJAN • XRAY
 </p>
 
 
-<a class="btn">
+<a class="btn" href="https://wa.me/628000000000">
 BELI CONFIG
 </a>
+
+
+</div>
+
+
+</div>
+
+
+
+
+<section id="server">
+
+
+<div class="title">
+🌐 NEXUS SERVER
+</div>
+
+
+
+<div class="cards">
+
+
+<div class="card">
+
+<h2>🇸🇬 Singapore</h2>
+
+<p>🟢 ONLINE</p>
+
+<p>Ping 20ms</p>
+
+<p>10Gbps Network</p>
+
+<button>CONNECT</button>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>🇮🇩 Indonesia</h2>
+
+<p>🟢 ONLINE</p>
+
+<p>Ping 15ms</p>
+
+<p>10Gbps Network</p>
+
+<button>CONNECT</button>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>🇯🇵 Japan</h2>
+
+<p>🟢 ONLINE</p>
+
+<p>Ping 40ms</p>
+
+<p>5Gbps Network</p>
+
+<button>CONNECT</button>
+
+</div>
 
 
 </div>
@@ -162,6 +462,87 @@ BELI CONFIG
 
 
 
-</body>
 
+<section id="harga">
+
+
+<div class="title">
+💎 PREMIUM PLAN
+</div>
+
+
+<div class="cards">
+
+
+<div class="card">
+
+<h2>30 DAYS</h2>
+
+<p>Unlimited VPN</p>
+
+<p>Multi Device</p>
+
+<button>BELI</button>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>90 DAYS</h2>
+
+<p>Priority Server</p>
+
+<p>High Speed</p>
+
+<button>BELI</button>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>1 YEAR</h2>
+
+<p>Ultimate Access</p>
+
+<p>VIP Node</p>
+
+<button>BELI</button>
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+<section id="kontak">
+
+<div class="title">
+CONTACT
+</div>
+
+<p>
+Telegram • WhatsApp • Support 24/7
+</p>
+
+</section>
+
+
+
+<footer>
+
+© 2026 NEXUS VPN
+
+</footer>
+
+
+</body>
 </html>
