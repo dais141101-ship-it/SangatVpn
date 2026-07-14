@@ -10,7 +10,7 @@
   <meta name="keywords" content="vpn ssh, vmess, vpn premium, vpn singapore, vpn indonesia, vpn murah, vpn gaming, ssh vpn, v2ray vmess">
   <meta name="robots" content="index, follow">
   
-  <!-- Open Graph / Social Media -->
+  <!-- Open Graph -->
   <meta property="og:title" content="Sanggar Premium VPN SSH & VMess - Fast & Stabil">
   <meta property="og:description" content="VPN Premium Indonesia & Singapore mulai Rp10.000. Low Ping, Support Streaming & Gaming.">
   <meta property="og:type" content="website">
@@ -21,17 +21,67 @@
   <link rel="canonical" href="https://nama-domain-anda.com">
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
-      background: linear-gradient(135deg, #0f051f, #000000);
-      color: white;
       font-family: 'Inter', system-ui, sans-serif;
-      line-height: 1.6;
+      color: white;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
     }
 
-    .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+    /* Background Jaringan VPN Bergerak */
+    .bg-network {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(circle at center, #1a0033 0%, #000000 70%);
+      z-index: -2;
+    }
+
+    .grid {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: linear-gradient(#00f0ff22 1px, transparent 1px),
+                  linear-gradient(90deg, #00f0ff22 1px, transparent 1px);
+      background-size: 60px 60px;
+      animation: gridMove 28s linear infinite;
+      opacity: 0.55;
+    }
+
+    @keyframes gridMove {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(60px, 60px); }
+    }
+
+    .particles {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      z-index: -1;
+    }
+
+    .dot {
+      position: absolute;
+      background: #00f0ff;
+      border-radius: 50%;
+      box-shadow: 0 0 12px #00f0ff;
+      animation: float 22s linear infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(100vh) scale(0.5); }
+      100% { transform: translateY(-150px) scale(1.2); }
+    }
+
+    .container { 
+      max-width: 1200px; 
+      margin: 0 auto; 
+      padding: 20px; 
+      position: relative; 
+      z-index: 10; 
+    }
 
     header { text-align: center; padding: 60px 20px 40px; }
     .logo { font-size: 3.2rem; font-weight: 700; color: #ff00ff; text-shadow: 0 0 30px #ff00ff; }
@@ -83,6 +133,13 @@
   </style>
 </head>
 <body>
+
+  <!-- BACKGROUND BERGERAK -->
+  <div class="bg-network">
+    <div class="grid"></div>
+    <div class="particles" id="particles"></div>
+  </div>
+
   <div class="container">
     <header>
       <div class="logo">🛡️ SANGGAR PREMIUM</div>
@@ -113,7 +170,6 @@
 
     <h2 style="text-align:center; margin:50px 0 25px;">DAFTAR HARGA VPN PREMIUM</h2>
     <div class="pricing">
-      <!-- Price cards sama seperti sebelumnya -->
       <div class="price-card">
         <h3>🇸🇬 Singapore</h3>
         <div class="price">Rp10.000</div>
@@ -164,5 +220,22 @@
       <p>&copy; 2026 Sanggar Premium VPN • VPN SSH & VMess Terpercaya di Indonesia</p>
     </footer>
   </div>
+
+  <script>
+    // Partikel bergerak
+    const particlesContainer = document.getElementById('particles');
+    for (let i = 0; i < 80; i++) {
+      const dot = document.createElement('div');
+      dot.className = 'dot';
+      const size = Math.random() * 4 + 2;
+      dot.style.width = `${size}px`;
+      dot.style.height = `${size}px`;
+      dot.style.left = `${Math.random() * 100}vw`;
+      dot.style.animationDuration = `${Math.random() * 15 + 18}s`;
+      dot.style.animationDelay = `-${Math.random() * 25}s`;
+      dot.style.opacity = Math.random() * 0.6 + 0.4;
+      particlesContainer.appendChild(dot);
+    }
+  </script>
 </body>
 </html>
